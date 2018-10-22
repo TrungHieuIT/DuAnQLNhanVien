@@ -183,13 +183,13 @@
             // 
             this.label4.Location = new System.Drawing.Point(312, 70);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "SĐT";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(362, 67);
+            this.txtPhone.Location = new System.Drawing.Point(353, 67);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(134, 20);
             this.txtPhone.TabIndex = 6;
