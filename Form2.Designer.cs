@@ -163,10 +163,11 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(466, 29);
+            this.label5.Location = new System.Drawing.Point(29, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 9;
@@ -174,14 +175,14 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(532, 26);
+            this.txtPosition.Location = new System.Drawing.Point(111, 105);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(117, 20);
+            this.txtPosition.Size = new System.Drawing.Size(177, 20);
             this.txtPosition.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(312, 70);
+            this.label4.Location = new System.Drawing.Point(393, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 7;
@@ -189,14 +190,14 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(353, 67);
+            this.txtPhone.Location = new System.Drawing.Point(465, 67);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(134, 20);
+            this.txtPhone.Size = new System.Drawing.Size(191, 20);
             this.txtPhone.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(207, 29);
+            this.label3.Location = new System.Drawing.Point(393, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 5;
@@ -204,7 +205,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(269, 26);
+            this.txtAddress.Location = new System.Drawing.Point(465, 26);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(191, 20);
             this.txtAddress.TabIndex = 4;
@@ -234,9 +235,9 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(79, 26);
+            this.txtID.Location = new System.Drawing.Point(112, 29);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(105, 20);
+            this.txtID.Size = new System.Drawing.Size(176, 20);
             this.txtID.TabIndex = 0;
             // 
             // dgvDanhSach
@@ -258,6 +259,7 @@
             // 
             // id
             // 
+            this.id.DataPropertyName = "MaNV";
             this.id.HeaderText = "Mã NV";
             this.id.Name = "id";
             this.id.Width = 80;
@@ -265,22 +267,26 @@
             // name
             // 
             this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "HoTenNV";
             this.name.HeaderText = "Họ Và Tên";
             this.name.Name = "name";
             // 
             // address
             // 
+            this.address.DataPropertyName = "DiaChi";
             this.address.HeaderText = "Địa Chỉ";
             this.address.Name = "address";
             this.address.Width = 250;
             // 
             // phone
             // 
+            this.phone.DataPropertyName = "SDT";
             this.phone.HeaderText = "SĐT";
             this.phone.Name = "phone";
             // 
             // position
             // 
+            this.position.DataPropertyName = "ChucVu";
             this.position.HeaderText = "Chức Vụ";
             this.position.Name = "position";
             // 
