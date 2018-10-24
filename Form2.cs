@@ -13,6 +13,9 @@ namespace DemoQLNhanVien_BTL_
 {
     public partial class Form2 : Form
     {
+        SqlConnection cn;
+        DataTable memberTable;
+        SqlDataAdapter da;
         public Form2()
         {
             InitializeComponent();
@@ -20,55 +23,53 @@ namespace DemoQLNhanVien_BTL_
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
-            DialogResult result = frm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                this.Enabled = true;
-            }
-            List<QLNV> list = GetNhanVien();
-            dgvDanhSach.DataSource = list;
-
-
-            dgvDanhSach.DataSource = list;
-            txtID.DataBindings.Add("Text", list, "id");
-            txtName.DataBindings.Add("Text", list, "name");
-            txtAddress.DataBindings.Add("Text", list, "address");
-            txtPhone.DataBindings.Add("Text", list, "phone");
-            txtPosition.DataBindings.Add("Text", list, "position");
+            string cnStr = "Server = . ; Database = QLNhanVien; Integrated security = true";
+            cn = new SqlConnection(cnStr);
+            DataSet ds = GetData();
+            memberTable = ds.Tables[0];
+            dgvDanhSach.DataSource = memberTable;
         }
-        List<QLNV> GetNhanVien()
+        DataSet GetData()
         {
-            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS ; Database = QLNhanVien ; Integrated security = true;";
-            SqlConnection cn = new SqlConnection(cnStr);
-            cn.Open();
-            string sql = "SELECT * FROM DSNhanVien1 ";
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            cmd.CommandText = sql;
-            cmd.CommandType = CommandType.Text;
-
-
-            SqlDataReader dr = cmd.ExecuteReader();
-            List<QLNV> list = new List<QLNV>();
-            string id, name, address, phone, position;
-
-            while (dr.Read())
-            {
-                id = dr[0].ToString();
-                name = dr[1].ToString();
-                address = dr[2].ToString();
-                phone = dr[3].ToString();
-                position = dr[4].ToString();
-
-                QLNV a = new QLNV(id, name, address, phone, position);
-                list.Add(a);
-            }
-            dr.Close();
-            cn.Close();
-            return list;
+            DataSet ds = new DataSet();
+            string sql = " Select * FROM DSNhanVien1";
+            da = new SqlDataAdapter(sql, cn);
+            int number = da.Fill(ds);
+            return ds;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DataRow row = memberTable.NewRow();
+            row["id"] = txtID.Text;
+            row["name"] = txtName.Text;
+            row["address"] = txtAddress.Text;
+            row["phone"] = txtPhone.Text;
+            row["position"] = txtPosition.Text;
+
+            memberTable.Rows.Add(row);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            da.Update(memberTable);
+        }
+
+        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int col = e.ColumnIndex;
+
+            if (dgvDanhSach.Columns[col] is DataGridViewButtonColumn && dgvDanhSach.Columns[col].Name == "delete")
+            {
+                int row = e.RowIndex;
+                if (row >= 0 && row < dgvDanhSach.Rows.Count)
+                {
+                    memberTable.Rows[row].Delete();
+                }
+            }
+        }
+
     }
-        
 }
