@@ -16,5 +16,15 @@ namespace DemoQLNhanVien_BTL_
         {
             InitializeComponent();
         }
+
+        private void FrmQuanLy_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmQuanLy_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();  
+        }   
     }
 }

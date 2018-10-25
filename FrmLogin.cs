@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace DemoQLNhanVien_BTL_
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace DemoQLNhanVien_BTL_
                 {
                     if (Login(userName, password))
                     {
-                       Form1 frm = new Form1();
+                       FrmLogin frm = new FrmLogin();
                         this.DialogResult = DialogResult.OK;
                         this.Close();
 
@@ -50,22 +50,26 @@ namespace DemoQLNhanVien_BTL_
                 }
             }
         }
+        public string type;
         private bool Login(string username, string password)
         {
             string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database = QLNhanVien; Integrated security = true";
             SqlConnection cn = new SqlConnection(cnStr);
             cn.Open();
-            string sql = "SELECT COUNT (UserName) FROM Users WHERE Username = '" + username + "' AND password = '" + password + "'";
+           
+            string sql = "SELECT Type FROM Users WHERE Username = '" + username + "' AND password = '" + password + "'";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             cmd.CommandText = sql;
             cmd.CommandType = CommandType.Text;
-            int count = (int)cmd.ExecuteScalar();
+          
+            type = (string)cmd.ExecuteScalar();
             cn.Close();
-            if (count == 1)
+           
+            if (type == "1" || type == "2")
                 return true;
-            else
-                return false;
+
+            return false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

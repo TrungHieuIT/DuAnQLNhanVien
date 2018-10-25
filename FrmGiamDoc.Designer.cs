@@ -1,6 +1,6 @@
 ﻿namespace DemoQLNhanVien_BTL_
 {
-    partial class Form2
+    partial class FrmGiamDoc
     {
         /// <summary>
         /// Required designer variable.
@@ -296,15 +296,16 @@
             this.delete.Name = "delete";
             this.delete.Width = 60;
             // 
-            // Form2
+            // FrmGiamDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 561);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form2";
+            this.Name = "FrmGiamDoc";
             this.Text = "Quản Lý Nhân Viên";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGiamDoc_FormClosing);
+            this.Load += new System.EventHandler(this.FrmGiamDoc_Load);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

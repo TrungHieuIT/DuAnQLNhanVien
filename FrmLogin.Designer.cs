@@ -1,6 +1,6 @@
 ﻿namespace DemoQLNhanVien_BTL_
 {
-    partial class Form1
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
