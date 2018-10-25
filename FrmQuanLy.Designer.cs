@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "FrmQuanLy";
-            this.Text = "FrmQuanLy";
+            this.Text = "Quản Lý";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmQuanLy_FormClosing);
             this.Load += new System.EventHandler(this.FrmQuanLy_Load);
             this.ResumeLayout(false);

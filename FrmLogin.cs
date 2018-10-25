@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 namespace DemoQLNhanVien_BTL_
 {
     public partial class FrmLogin : Form
@@ -17,11 +18,26 @@ namespace DemoQLNhanVien_BTL_
             InitializeComponent();
         }
 
+        public string GetMD5(string chuoi)
+        {
+            string str_md5 = "";
+            byte[] mang = System.Text.Encoding.UTF8.GetBytes(chuoi);
+
+            MD5CryptoServiceProvider my_md5 = new MD5CryptoServiceProvider();
+            mang = my_md5.ComputeHash(mang);
+
+            foreach (byte b in mang)
+            {
+                str_md5 += b.ToString("X2");
+            }
+
+            return str_md5;
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             {
-                string userName = txtUserName.Text;
-                string password = txtPass.Text;
+                string userName = GetMD5(txtUserName.Text);
+                string password = GetMD5(txtPass.Text);
                 if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password)) // xét thử rỗng với trống không 
                 {
                     MessageBox.Show("Yêu cầu thông tin chưa đầy đủ ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -76,5 +92,13 @@ namespace DemoQLNhanVien_BTL_
         {
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = GetMD5(txtUserName.Text);
+            textBox2.Text = GetMD5(txtPass.Text);
+        }
+
+        
     }
 }
