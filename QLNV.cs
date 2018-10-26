@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DemoQLNhanVien_BTL_
 {
-    class QLNV
+   public abstract class QLNV
     {
         public string ID { get; set; }
         public string Name { get; set; }
@@ -21,5 +21,7 @@ namespace DemoQLNhanVien_BTL_
             Phone = phone;
             Position = position;
         }
+        public const int luong = 200000;
+        public abstract double TinhTienLuong(int soNgayLam);
     }
 }
