@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace DemoQLNhanVien_BTL_
 {
-    class TruongPhong
+    public class TruongPhong : QLNV
     {
+        public TruongPhong(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
+        {
+        }
+
+        public override double TinhTienLuong(int soNgayLam)
+        {
+            return 1.5 * luong * soNgayLam;
+        }
     }
 }
