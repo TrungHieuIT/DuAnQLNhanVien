@@ -11,7 +11,10 @@ namespace DemoQLNhanVien_BTL_
         public NhanVien(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
         }
+        public NhanVien():base()
+        {
 
+        }
         public override double TinhTienLuong(int soNgayLam)
         {
             return 1.2 * luong * soNgayLam;

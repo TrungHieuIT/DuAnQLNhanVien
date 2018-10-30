@@ -11,7 +11,10 @@ namespace DemoQLNhanVien_BTL_
         public PhoGiamDoc(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
         }
+        public PhoGiamDoc():base()
+        {
 
+        }
         public override double TinhTienLuong(int soNgayLam)
         {
             return 2 * luong * soNgayLam;

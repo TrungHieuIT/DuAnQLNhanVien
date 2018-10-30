@@ -11,7 +11,10 @@ namespace DemoQLNhanVien_BTL_
         public TruongPhong(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
         }
+        public TruongPhong():base()
+        {
 
+        }
         public override double TinhTienLuong(int soNgayLam)
         {
             return 1.5 * luong * soNgayLam;
