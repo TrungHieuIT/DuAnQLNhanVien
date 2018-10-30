@@ -35,8 +35,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtDay = new System.Windows.Forms.TextBox();
+            this.lbSoNgayLam = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
-            this.lbSoNgayLam = new System.Windows.Forms.Label();
-            this.txtDay = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +55,8 @@
             this.NgayLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -117,10 +118,11 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.label6);
+            this.splitContainer3.Panel2.Controls.Add(this.cmbPosition);
             this.splitContainer3.Panel2.Controls.Add(this.txtDay);
             this.splitContainer3.Panel2.Controls.Add(this.lbSoNgayLam);
             this.splitContainer3.Panel2.Controls.Add(this.label5);
-            this.splitContainer3.Panel2.Controls.Add(this.txtPosition);
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Panel2.Controls.Add(this.txtPhone);
             this.splitContainer3.Panel2.Controls.Add(this.label3);
@@ -141,6 +143,7 @@
             this.btnCalculator.TabIndex = 3;
             this.btnCalculator.Text = "Tính Lương";
             this.btnCalculator.UseVisualStyleBackColor = true;
+            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
             // 
             // btnUpdate
             // 
@@ -171,6 +174,22 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // txtDay
+            // 
+            this.txtDay.Location = new System.Drawing.Point(494, 109);
+            this.txtDay.Name = "txtDay";
+            this.txtDay.Size = new System.Drawing.Size(191, 20);
+            this.txtDay.TabIndex = 11;
+            // 
+            // lbSoNgayLam
+            // 
+            this.lbSoNgayLam.AutoSize = true;
+            this.lbSoNgayLam.Location = new System.Drawing.Point(393, 109);
+            this.lbSoNgayLam.Name = "lbSoNgayLam";
+            this.lbSoNgayLam.Size = new System.Drawing.Size(79, 13);
+            this.lbSoNgayLam.TabIndex = 10;
+            this.lbSoNgayLam.Text = "Ngày Làm Việc";
+            // 
             // label5
             // 
             this.label5.Location = new System.Drawing.Point(29, 105);
@@ -178,13 +197,6 @@
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Chức Vụ";
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(111, 105);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(177, 20);
-            this.txtPosition.TabIndex = 8;
             // 
             // label4
             // 
@@ -266,22 +278,6 @@
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
             this.dgvDanhSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSach_CellMouseClick);
             // 
-            // lbSoNgayLam
-            // 
-            this.lbSoNgayLam.AutoSize = true;
-            this.lbSoNgayLam.Location = new System.Drawing.Point(393, 109);
-            this.lbSoNgayLam.Name = "lbSoNgayLam";
-            this.lbSoNgayLam.Size = new System.Drawing.Size(79, 13);
-            this.lbSoNgayLam.TabIndex = 10;
-            this.lbSoNgayLam.Text = "Ngày Làm Việc";
-            // 
-            // txtDay
-            // 
-            this.txtDay.Location = new System.Drawing.Point(494, 109);
-            this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(191, 20);
-            this.txtDay.TabIndex = 11;
-            // 
             // id
             // 
             this.id.DataPropertyName = "MaNV";
@@ -333,6 +329,28 @@
             this.delete.Name = "delete";
             this.delete.Width = 60;
             // 
+            // cmbPosition
+            // 
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
+            "Giám Đốc",
+            "Nhân Viên",
+            "Phó Giám Đốc",
+            "Trưởng Phòng"});
+            this.cmbPosition.Location = new System.Drawing.Point(111, 102);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(177, 21);
+            this.cmbPosition.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(716, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "label6";
+            // 
             // FrmGiamDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,7 +394,6 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.DataGridView dgvDanhSach;
@@ -390,5 +407,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.ComboBox cmbPosition;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -39,10 +39,10 @@ namespace DemoQLNhanVien_BTL_
             row["HoTenNV"] = txtName.Text;
             row["DiaChi"] = txtAddress.Text;
             row["SDT"] = txtPhone.Text;
-            row["ChucVu"] = txtPosition.Text;
+            row["ChucVu"] = cmbPosition.Text;
 
             memberTable.Rows.Add(row);
-            txtID.Text = txtDay.Text = txtName.Text = txtPhone.Text = txtPosition.Text = "";
+            txtID.Text = txtDay.Text = txtName.Text = txtPhone.Text = cmbPosition.Text = "";
             txtID.Focus();
 
             //for (int i = 0; i < dgvDanhSach.RowCount; i++)
@@ -103,10 +103,10 @@ namespace DemoQLNhanVien_BTL_
             txtPhone.DataBindings.Clear();
             txtPhone.DataBindings.Add("Text", dgvDanhSach.DataSource, "SDT");
 
-            txtPosition.DataBindings.Clear();
-            txtPosition.DataBindings.Add("Text", dgvDanhSach.DataSource, "ChucVu");
+            cmbPosition.DataBindings.Clear();
+            cmbPosition.DataBindings.Add("Text", dgvDanhSach.DataSource, "ChucVu");
 
-            if(txtID == null)
+            if(txtID != null)
             {
                 lbSoNgayLam.Enabled = true;
                 txtDay.Enabled = true;
@@ -123,5 +123,33 @@ namespace DemoQLNhanVien_BTL_
             
         }
 
+        private void btnCalculator_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(txtDay.Text);
+            double kq = 0;
+            if (cmbPosition.Text == "Giám Ðốc")
+            {
+                GiamDoc gd = new GiamDoc();
+                kq = gd.TinhTienLuong(a);
+            }
+            if (cmbPosition.Text == "Phó Giám Đốc")
+            {
+                PhoGiamDoc nv = new PhoGiamDoc();
+                kq = nv.TinhTienLuong(a);
+            }
+            if (cmbPosition.Text == "Trưởng Phòng")
+            {
+                TruongPhong nv = new TruongPhong();
+                kq = nv.TinhTienLuong(a);
+            }
+            if (cmbPosition.Text == "Nhân Viên")
+            {
+                NhanVien nv = new NhanVien();
+                kq = nv.TinhTienLuong(a);
+            }
+            
+            dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
+
+        }
     }
 }
