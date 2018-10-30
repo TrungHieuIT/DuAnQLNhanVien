@@ -69,7 +69,7 @@ namespace DemoQLNhanVien_BTL_
         public string type;
         private bool Login(string username, string password)
         {
-            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database = QLNhanVien; Integrated security = true";
+            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database =EE; Integrated security = true";
             SqlConnection cn = new SqlConnection(cnStr);
             cn.Open();
            

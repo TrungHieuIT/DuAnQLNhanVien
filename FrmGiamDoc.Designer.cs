@@ -52,7 +52,7 @@
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbSoNgayLam = new System.Windows.Forms.Label();
             this.txtDay = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -116,7 +116,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.txtDay);
-            this.splitContainer3.Panel2.Controls.Add(this.label6);
+            this.splitContainer3.Panel2.Controls.Add(this.lbSoNgayLam);
             this.splitContainer3.Panel2.Controls.Add(this.label5);
             this.splitContainer3.Panel2.Controls.Add(this.txtPosition);
             this.splitContainer3.Panel2.Controls.Add(this.label4);
@@ -260,6 +260,7 @@
             this.dgvDanhSach.Size = new System.Drawing.Size(763, 281);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
+            this.dgvDanhSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSach_CellMouseClick);
             // 
             // id
             // 
@@ -300,14 +301,14 @@
             this.delete.Name = "delete";
             this.delete.Width = 60;
             // 
-            // label6
+            // lbSoNgayLam
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(393, 109);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Ngày Làm Việc";
+            this.lbSoNgayLam.AutoSize = true;
+            this.lbSoNgayLam.Location = new System.Drawing.Point(393, 109);
+            this.lbSoNgayLam.Name = "lbSoNgayLam";
+            this.lbSoNgayLam.Size = new System.Drawing.Size(79, 13);
+            this.lbSoNgayLam.TabIndex = 10;
+            this.lbSoNgayLam.Text = "Ngày Làm Việc";
             // 
             // txtDay
             // 
@@ -370,6 +371,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.TextBox txtDay;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbSoNgayLam;
     }
 }
