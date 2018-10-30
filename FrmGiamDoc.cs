@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DemoQLNhanVien_BTL_;
 
 namespace DemoQLNhanVien_BTL_
 {
