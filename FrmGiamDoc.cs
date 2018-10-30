@@ -11,24 +11,17 @@ using System.Data.SqlClient;
 
 namespace DemoQLNhanVien_BTL_
 {
-    public partial class Form2 : Form
+    public partial class FrmGiamDoc : Form
     {
         SqlConnection cn;
         DataTable memberTable;
         SqlDataAdapter da;
-        public Form2()
+        public FrmGiamDoc()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            string cnStr = "Server = . ; Database = QLNhanVien; Integrated security = true";
-            cn = new SqlConnection(cnStr);
-            DataSet ds = GetData();
-            memberTable = ds.Tables[0];
-            dgvDanhSach.DataSource = memberTable;
-        }
+   
         DataSet GetData()
         {
             DataSet ds = new DataSet();
@@ -41,11 +34,11 @@ namespace DemoQLNhanVien_BTL_
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DataRow row = memberTable.NewRow();
-            row["id"] = txtID.Text;
-            row["name"] = txtName.Text;
-            row["address"] = txtAddress.Text;
-            row["phone"] = txtPhone.Text;
-            row["position"] = txtPosition.Text;
+            row["MaNV"] = txtID.Text;
+            row["HoTenNV"] = txtName.Text;
+            row["DiaChi"] = txtAddress.Text;
+            row["SDT"] = txtPhone.Text;
+            row["ChucVu"] = txtPosition.Text;
 
             memberTable.Rows.Add(row);
         }
@@ -71,5 +64,17 @@ namespace DemoQLNhanVien_BTL_
             }
         }
 
+        private void FrmGiamDoc_Load(object sender, EventArgs e)
+        {
+            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS ; Database = QLNhanVien; Integrated security = true";
+            cn = new SqlConnection(cnStr);
+            DataSet ds = GetData();
+            memberTable = ds.Tables[0];
+            dgvDanhSach.DataSource = memberTable;
+        }
+        private void FrmGiamDoc_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

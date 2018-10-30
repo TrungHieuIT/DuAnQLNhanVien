@@ -1,6 +1,6 @@
 ﻿namespace DemoQLNhanVien_BTL_
 {
-    partial class Form2
+    partial class FrmGiamDoc
     {
         /// <summary>
         /// Required designer variable.
@@ -75,8 +75,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1032, 561);
-            this.splitContainer1.SplitterDistance = 149;
+            this.splitContainer1.Size = new System.Drawing.Size(804, 469);
+            this.splitContainer1.SplitterDistance = 116;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -93,8 +93,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvDanhSach);
-            this.splitContainer2.Size = new System.Drawing.Size(879, 561);
-            this.splitContainer2.SplitterDistance = 221;
+            this.splitContainer2.Size = new System.Drawing.Size(684, 469);
+            this.splitContainer2.SplitterDistance = 184;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -123,8 +123,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtName);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
             this.splitContainer3.Panel2.Controls.Add(this.txtID);
-            this.splitContainer3.Size = new System.Drawing.Size(879, 221);
-            this.splitContainer3.SplitterDistance = 48;
+            this.splitContainer3.Size = new System.Drawing.Size(684, 184);
+            this.splitContainer3.SplitterDistance = 39;
             this.splitContainer3.TabIndex = 0;
             // 
             // btnCalculator
@@ -163,10 +163,11 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(466, 29);
+            this.label5.Location = new System.Drawing.Point(29, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 9;
@@ -174,14 +175,14 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(532, 26);
+            this.txtPosition.Location = new System.Drawing.Point(111, 105);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(117, 20);
+            this.txtPosition.Size = new System.Drawing.Size(177, 20);
             this.txtPosition.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(312, 70);
+            this.label4.Location = new System.Drawing.Point(393, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 7;
@@ -189,14 +190,14 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(353, 67);
+            this.txtPhone.Location = new System.Drawing.Point(465, 67);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(134, 20);
+            this.txtPhone.Size = new System.Drawing.Size(191, 20);
             this.txtPhone.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(207, 29);
+            this.label3.Location = new System.Drawing.Point(393, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 5;
@@ -204,7 +205,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(269, 26);
+            this.txtAddress.Location = new System.Drawing.Point(465, 26);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(191, 20);
             this.txtAddress.TabIndex = 4;
@@ -234,9 +235,9 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(79, 26);
+            this.txtID.Location = new System.Drawing.Point(112, 29);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(105, 20);
+            this.txtID.Size = new System.Drawing.Size(176, 20);
             this.txtID.TabIndex = 0;
             // 
             // dgvDanhSach
@@ -252,35 +253,40 @@
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(0, 0);
             this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.Size = new System.Drawing.Size(879, 336);
+            this.dgvDanhSach.Size = new System.Drawing.Size(684, 281);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
             // 
             // id
             // 
+            this.id.DataPropertyName = "MaNV";
             this.id.HeaderText = "Mã NV";
             this.id.Name = "id";
             this.id.Width = 80;
             // 
             // name
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "HoTenNV";
             this.name.HeaderText = "Họ Và Tên";
             this.name.Name = "name";
+            this.name.Width = 150;
             // 
             // address
             // 
+            this.address.DataPropertyName = "DiaChi";
             this.address.HeaderText = "Địa Chỉ";
             this.address.Name = "address";
-            this.address.Width = 250;
+            this.address.Width = 150;
             // 
             // phone
             // 
+            this.phone.DataPropertyName = "SDT";
             this.phone.HeaderText = "SĐT";
             this.phone.Name = "phone";
             // 
             // position
             // 
+            this.position.DataPropertyName = "ChucVu";
             this.position.HeaderText = "Chức Vụ";
             this.position.Name = "position";
             // 
@@ -290,15 +296,16 @@
             this.delete.Name = "delete";
             this.delete.Width = 60;
             // 
-            // Form2
+            // FrmGiamDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 561);
+            this.ClientSize = new System.Drawing.Size(804, 469);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form2";
+            this.Name = "FrmGiamDoc";
             this.Text = "Quản Lý Nhân Viên";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGiamDoc_FormClosing);
+            this.Load += new System.EventHandler(this.FrmGiamDoc_Load);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
