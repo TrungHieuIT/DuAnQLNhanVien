@@ -106,15 +106,15 @@ namespace DemoQLNhanVien_BTL_
             txtPosition.DataBindings.Clear();
             txtPosition.DataBindings.Add("Text", dgvDanhSach.DataSource, "ChucVu");
 
-            if(txtID.Text != "")
+            if(txtID == null)
             {
-                lbSoNgayLam.Visible = true;
-                txtDay.Visible = true;
+                lbSoNgayLam.Enabled = true;
+                txtDay.Enabled = true;
             }
             else
             {
-                lbSoNgayLam.Visible = false;
-                txtDay.Visible = false;
+                lbSoNgayLam.Enabled = false;
+                txtDay.Enabled = false;
 
             }
             //txtDay.DataBindings.Clear();
