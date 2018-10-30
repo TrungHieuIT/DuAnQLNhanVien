@@ -42,6 +42,8 @@ namespace DemoQLNhanVien_BTL_
             row["ChucVu"] = txtPosition.Text;
 
             memberTable.Rows.Add(row);
+            txtID.Text = txtDay.Text = txtName.Text = txtPhone.Text = txtPosition.Text = "";
+            txtID.Focus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
