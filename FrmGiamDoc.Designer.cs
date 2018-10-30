@@ -75,8 +75,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1032, 561);
-            this.splitContainer1.SplitterDistance = 149;
+            this.splitContainer1.Size = new System.Drawing.Size(804, 469);
+            this.splitContainer1.SplitterDistance = 116;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -93,8 +93,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvDanhSach);
-            this.splitContainer2.Size = new System.Drawing.Size(879, 561);
-            this.splitContainer2.SplitterDistance = 221;
+            this.splitContainer2.Size = new System.Drawing.Size(684, 469);
+            this.splitContainer2.SplitterDistance = 184;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -123,8 +123,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtName);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
             this.splitContainer3.Panel2.Controls.Add(this.txtID);
-            this.splitContainer3.Size = new System.Drawing.Size(879, 221);
-            this.splitContainer3.SplitterDistance = 48;
+            this.splitContainer3.Size = new System.Drawing.Size(684, 184);
+            this.splitContainer3.SplitterDistance = 39;
             this.splitContainer3.TabIndex = 0;
             // 
             // btnCalculator
@@ -253,7 +253,7 @@
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(0, 0);
             this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.Size = new System.Drawing.Size(879, 336);
+            this.dgvDanhSach.Size = new System.Drawing.Size(684, 281);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
             // 
@@ -266,17 +266,17 @@
             // 
             // name
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.DataPropertyName = "HoTenNV";
             this.name.HeaderText = "Họ Và Tên";
             this.name.Name = "name";
+            this.name.Width = 150;
             // 
             // address
             // 
             this.address.DataPropertyName = "DiaChi";
             this.address.HeaderText = "Địa Chỉ";
             this.address.Name = "address";
-            this.address.Width = 250;
+            this.address.Width = 150;
             // 
             // phone
             // 
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 561);
+            this.ClientSize = new System.Drawing.Size(804, 469);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmGiamDoc";
             this.Text = "Quản Lý Nhân Viên";

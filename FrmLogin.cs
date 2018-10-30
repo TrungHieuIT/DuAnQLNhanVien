@@ -93,11 +93,7 @@ namespace DemoQLNhanVien_BTL_
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = GetMD5(txtUserName.Text);
-            textBox2.Text = GetMD5(txtPass.Text);
-        }
+       
 
         
     }
