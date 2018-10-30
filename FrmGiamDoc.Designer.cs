@@ -35,6 +35,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.txtDay = new System.Windows.Forms.TextBox();
             this.lbSoNgayLam = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,8 +56,6 @@
             this.NgayLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cmbPosition = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -118,7 +117,6 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.label6);
             this.splitContainer3.Panel2.Controls.Add(this.cmbPosition);
             this.splitContainer3.Panel2.Controls.Add(this.txtDay);
             this.splitContainer3.Panel2.Controls.Add(this.lbSoNgayLam);
@@ -174,12 +172,27 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // cmbPosition
+            // 
+            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
+            "Giám Đốc",
+            "Nhân Viên",
+            "Phó Giám Đốc",
+            "Trưởng Phòng"});
+            this.cmbPosition.Location = new System.Drawing.Point(111, 102);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(177, 21);
+            this.cmbPosition.TabIndex = 12;
+            // 
             // txtDay
             // 
             this.txtDay.Location = new System.Drawing.Point(494, 109);
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(191, 20);
             this.txtDay.TabIndex = 11;
+            this.txtDay.Visible = false;
             // 
             // lbSoNgayLam
             // 
@@ -189,6 +202,7 @@
             this.lbSoNgayLam.Size = new System.Drawing.Size(79, 13);
             this.lbSoNgayLam.TabIndex = 10;
             this.lbSoNgayLam.Text = "Ngày Làm Việc";
+            this.lbSoNgayLam.Visible = false;
             // 
             // label5
             // 
@@ -329,28 +343,6 @@
             this.delete.Name = "delete";
             this.delete.Width = 60;
             // 
-            // cmbPosition
-            // 
-            this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Items.AddRange(new object[] {
-            "Giám Đốc",
-            "Nhân Viên",
-            "Phó Giám Đốc",
-            "Trưởng Phòng"});
-            this.cmbPosition.Location = new System.Drawing.Point(111, 102);
-            this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(177, 21);
-            this.cmbPosition.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(716, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
-            // 
             // FrmGiamDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +400,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.ComboBox cmbPosition;
-        private System.Windows.Forms.Label label6;
     }
 }

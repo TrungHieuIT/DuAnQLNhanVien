@@ -55,14 +55,14 @@ namespace DemoQLNhanVien_BTL_
             //}
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e) //pass
         {
 
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             da.Update(memberTable);
         }
 
-        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e) //pass
         {
             int col = e.ColumnIndex;
             int row = e.RowIndex;
@@ -76,7 +76,7 @@ namespace DemoQLNhanVien_BTL_
             }
         }
 
-        private void FrmGiamDoc_Load(object sender, EventArgs e)
+        private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
         {
             string cnStr = "Server =TrungHieuIT\\SQLEXPRESS ; Database = EE; Integrated security = true";
             cn = new SqlConnection(cnStr);
@@ -89,7 +89,7 @@ namespace DemoQLNhanVien_BTL_
             Application.Exit();
         }
 
-        private void dgvDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)//pass
         {
             txtID.DataBindings.Clear();
             txtID.DataBindings.Add("Text", dgvDanhSach.DataSource, "MaNV");
@@ -108,22 +108,21 @@ namespace DemoQLNhanVien_BTL_
 
             if(txtID != null)
             {
-                lbSoNgayLam.Enabled = true;
-                txtDay.Enabled = true;
+                lbSoNgayLam.Visible = true;
+                txtDay.Visible = true;
             }
             else
             {
-                lbSoNgayLam.Enabled = false;
-                txtDay.Enabled = false;
+                lbSoNgayLam.Visible = false;
+                txtDay.Visible = false;
 
             }
-            //txtDay.DataBindings.Clear();
-            //txtDay.DataBindings.Add("Text", dgvDanhSach.DataSource, "NgayLamViec");
+           
 
             
         }
 
-        private void btnCalculator_Click(object sender, EventArgs e)
+        private void btnCalculator_Click(object sender, EventArgs e) // pass
         {
             int a = Convert.ToInt32(txtDay.Text);
             double kq = 0;
