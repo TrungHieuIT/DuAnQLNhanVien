@@ -275,6 +275,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(176, 20);
             this.txtID.TabIndex = 0;
+        
             // 
             // dgvDanhSach
             // 

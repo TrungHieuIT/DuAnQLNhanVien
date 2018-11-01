@@ -38,9 +38,9 @@ namespace DemoQLNhanVien_BTL_
         public string type;
         private void btnLogin_Click(object sender, EventArgs e)
         {
-             daP = new DataProvider();
+            daP = new DataProvider();
             {
-                string userName =daP.GetMD5(txtUserName.Text);
+                string userName = daP.GetMD5(txtUserName.Text);
                 string password = daP.GetMD5(txtPass.Text);
                 if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password)) // xét thử rỗng với trống không 
                 {
@@ -48,14 +48,25 @@ namespace DemoQLNhanVien_BTL_
                 }
                 else
                 {
-                    
+
                     if (daP.Login(userName, password))
                     {
-                       FrmLogin frm = new FrmLogin();
+                        FrmLogin frm = new FrmLogin();
                         this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        this.Hide();
                         type = daP.type;
-
+                        if (daP.type == "1")
+                        {
+                            FrmGiamDoc frmGD = new FrmGiamDoc();
+                            frmGD.ShowDialog();
+                            
+                        }
+                        if (daP.type == "2")
+                        {
+                            FrmQuanLy frmQL = new FrmQuanLy();
+                            frmQL.ShowDialog();
+                        }
+                      
                     }
                     else
                     {
@@ -72,8 +83,10 @@ namespace DemoQLNhanVien_BTL_
                 }
             }
         }
-        
-       
+
+  
+
+
 
         //private bool Login(string username, string password)
         //{
@@ -101,8 +114,8 @@ namespace DemoQLNhanVien_BTL_
         //    Close();
         //}
 
-       
 
-        
+
+
     }
 }

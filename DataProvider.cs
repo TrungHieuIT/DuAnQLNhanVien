@@ -32,11 +32,11 @@ namespace DemoQLNhanVien_BTL_
         public string type;
         public bool Login(string username, string password)
         {
-            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database =EE; Integrated security = true";
+            string cnStr = "Server =USER-PC\\HUYNHDUC; Database =EE; Integrated security = true";
             SqlConnection cn = new SqlConnection(cnStr);
             cn.Open();
 
-            string sql = "SELECT Type FROM Users WHERE Username = '" + username + "' AND password = '" + password + "'";
+            string sql = "SELECT Type FROM Users WHERE Username = '" + username + "' AND Password = '" + password + "'";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             cmd.CommandText = sql;

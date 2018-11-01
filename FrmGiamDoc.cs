@@ -66,7 +66,7 @@ namespace DemoQLNhanVien_BTL_
 
         private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
         {
-            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS ; Database = EE; Integrated security = true";
+            string cnStr = "Server =USER-PC\\HUYNHDUC; Database = EE; Integrated security = true ;";
             cn = new SqlConnection(cnStr);
             DataSet ds = GetData();
             memberTable = ds.Tables[0];
@@ -81,11 +81,11 @@ namespace DemoQLNhanVien_BTL_
         {
             int numrow;
             numrow = e.RowIndex;
-            txtID.Text = dgvDanhSach.Rows[numrow].Cells[1].Value.ToString();
-            txtName.Text = dgvDanhSach.Rows[numrow].Cells[2].Value.ToString();
-            txtAddress.Text = dgvDanhSach.Rows[numrow].Cells[3].Value.ToString();
-            txtPhone.Text = dgvDanhSach.Rows[numrow].Cells[4].Value.ToString();
-            cmbPosition.Text = dgvDanhSach.Rows[numrow].Cells[5].Value.ToString();
+            txtID.Text = dgvDanhSach.Rows[numrow].Cells["id"].Value.ToString();
+            txtName.Text = dgvDanhSach.Rows[numrow].Cells["name"].Value.ToString();
+            txtAddress.Text = dgvDanhSach.Rows[numrow].Cells["address"].Value.ToString();
+            txtPhone.Text = dgvDanhSach.Rows[numrow].Cells["phone"].Value.ToString();
+            cmbPosition.Text = dgvDanhSach.Rows[numrow].Cells["position"].Value.ToString();
 
             if (txtID.Text != "")
             {
@@ -116,30 +116,30 @@ namespace DemoQLNhanVien_BTL_
             {
                 GiamDoc gd = new GiamDoc();
                 kq = gd.TinhTienLuong(a);
-                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
             }
             if (cmbPosition.Text == "Phó Giám Đốc")
             {
                 PhoGiamDoc nv = new PhoGiamDoc();
                 kq = nv.TinhTienLuong(a);
-                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
             }
             if (cmbPosition.Text == "Trưởng Phòng")
             {
                 TruongPhong nv = new TruongPhong();
                 kq = nv.TinhTienLuong(a);
-                
-                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
-                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
+
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
             }
             if (cmbPosition.Text == "Nhân Viên")
             {
                 NhanVien nv = new NhanVien();
                 kq = nv.TinhTienLuong(a);
-                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
             }
             //txtID.Clear();
 
@@ -148,7 +148,19 @@ namespace DemoQLNhanVien_BTL_
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < dgvDanhSach.Rows.Count; i++)
+            {
+                if (dgvDanhSach.Rows[i].Selected)
+                {
+                    dgvDanhSach.Rows[i].Cells["id"].Value = txtID.Text;
+                    dgvDanhSach.Rows[i].Cells["name"].Value = txtName.Text;
+                    dgvDanhSach.Rows[i].Cells["address"].Value = txtAddress.Text;
+                    dgvDanhSach.Rows[i].Cells["phone"].Value = txtPhone.Text;
+                    dgvDanhSach.Rows[i].Cells["position"].Value = cmbPosition.Text;
+                }
+            }
+        }
             
         }
     }
-}
+
