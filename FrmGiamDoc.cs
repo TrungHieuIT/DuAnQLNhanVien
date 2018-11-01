@@ -14,9 +14,9 @@ namespace DemoQLNhanVien_BTL_
 {
     public partial class FrmGiamDoc : Form
     {
-        SqlConnection cn;
-        DataTable memberTable;
-        SqlDataAdapter da;
+       SqlConnection cn;
+       DataTable memberTable;
+       SqlDataAdapter da;
         public FrmGiamDoc()
         {
             InitializeComponent();
@@ -34,32 +34,20 @@ namespace DemoQLNhanVien_BTL_
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DataRow row = memberTable.NewRow();
-            row["MaNV"] = txtID.Text;
-            row["HoTenNV"] = txtName.Text;
-            row["DiaChi"] = txtAddress.Text;
-            row["SDT"] = txtPhone.Text;
-            row["ChucVu"] = cmbPosition.Text;
-
-            memberTable.Rows.Add(row);
-            txtID.Text = txtDay.Text = txtName.Text = txtPhone.Text = cmbPosition.Text = "";
+            
+            ChucNang cng = new ChucNang();
+            cng.Them(memberTable, txtID.Text, txtName.Text, txtPhone.Text, txtAddress.Text, cmbPosition.Text);
+            dgvDanhSach.DataSource = memberTable;
+            txtID.Text = txtDay.Text = txtName.Text = txtAddress.Text = txtPhone.Text = cmbPosition.Text = "";
             txtID.Focus();
-
-            //for (int i = 0; i < dgvDanhSach.RowCount; i++)
-            //{
-
-            //    if (dgvDanhSach.Rows[i].Selected && dgvDanhSach.Rows[i].Cells[0].ToString() == "132451")
-            //    {
-            //        MessageBox.Show("Trùng Mã Nhân Viên", "error");
-            //    }
-            //}
         }
 
         private void btnUpdate_Click(object sender, EventArgs e) //pass
         {
-
+            
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             da.Update(memberTable);
+            
         }
 
         private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e) //pass
@@ -91,64 +79,76 @@ namespace DemoQLNhanVien_BTL_
 
         private void dgvDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)//pass
         {
-            txtID.DataBindings.Clear();
-            txtID.DataBindings.Add("Text", dgvDanhSach.DataSource, "MaNV");
+            int numrow;
+            numrow = e.RowIndex;
+            txtID.Text = dgvDanhSach.Rows[numrow].Cells[1].Value.ToString();
+            txtName.Text = dgvDanhSach.Rows[numrow].Cells[2].Value.ToString();
+            txtAddress.Text = dgvDanhSach.Rows[numrow].Cells[3].Value.ToString();
+            txtPhone.Text = dgvDanhSach.Rows[numrow].Cells[4].Value.ToString();
+            cmbPosition.Text = dgvDanhSach.Rows[numrow].Cells[5].Value.ToString();
 
-            txtName.DataBindings.Clear();
-            txtName.DataBindings.Add("Text", dgvDanhSach.DataSource, "HoTenNV");
-
-            txtAddress.DataBindings.Clear();
-            txtAddress.DataBindings.Add("Text", dgvDanhSach.DataSource, "DiaChi");
-
-            txtPhone.DataBindings.Clear();
-            txtPhone.DataBindings.Add("Text", dgvDanhSach.DataSource, "SDT");
-
-            cmbPosition.DataBindings.Clear();
-            cmbPosition.DataBindings.Add("Text", dgvDanhSach.DataSource, "ChucVu");
-
-            if(txtID != null)
+            if (txtID.Text != "")
             {
                 lbSoNgayLam.Visible = true;
                 txtDay.Visible = true;
+                btnChange.Enabled = true;
+                btnUpdate.Enabled = true;
+                btnCalculator.Enabled = true;
             }
             else
             {
                 lbSoNgayLam.Visible = false;
                 txtDay.Visible = false;
+                btnChange.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnCalculator.Enabled = false;
+
 
             }
-           
-
-            
         }
 
         private void btnCalculator_Click(object sender, EventArgs e) // pass
         {
+            DataRow row = memberTable.NewRow();
             int a = Convert.ToInt32(txtDay.Text);
             double kq = 0;
             if (cmbPosition.Text == "Giám Ðốc")
             {
                 GiamDoc gd = new GiamDoc();
                 kq = gd.TinhTienLuong(a);
+                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
             }
             if (cmbPosition.Text == "Phó Giám Đốc")
             {
                 PhoGiamDoc nv = new PhoGiamDoc();
                 kq = nv.TinhTienLuong(a);
+                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
             }
             if (cmbPosition.Text == "Trưởng Phòng")
             {
                 TruongPhong nv = new TruongPhong();
                 kq = nv.TinhTienLuong(a);
+                
+                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
+                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
             }
             if (cmbPosition.Text == "Nhân Viên")
             {
                 NhanVien nv = new NhanVien();
                 kq = nv.TinhTienLuong(a);
+                dgvDanhSach.SelectedRows[0].Cells[7].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
             }
-            
-            dgvDanhSach.SelectedRows[0].Cells[6].Value = kq.ToString();
+            //txtID.Clear();
 
+
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

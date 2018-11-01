@@ -16,10 +16,10 @@ namespace DemoQLNhanVien_BTL_
         {
             InitializeComponent();
         }
-
+        
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            
             FrmLogin frm = new FrmLogin();
             DialogResult result = frm.ShowDialog();
             if (result == DialogResult.OK)

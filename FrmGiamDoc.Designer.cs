@@ -53,7 +53,7 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -135,6 +135,7 @@
             // 
             // btnCalculator
             // 
+            this.btnCalculator.Enabled = false;
             this.btnCalculator.Location = new System.Drawing.Point(344, 15);
             this.btnCalculator.Name = "btnCalculator";
             this.btnCalculator.Size = new System.Drawing.Size(84, 23);
@@ -145,6 +146,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(239, 15);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 23);
@@ -155,12 +157,14 @@
             // 
             // btnChange
             // 
+            this.btnChange.Enabled = false;
             this.btnChange.Location = new System.Drawing.Point(133, 15);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(84, 23);
             this.btnChange.TabIndex = 1;
             this.btnChange.Text = "Sửa";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnAdd
             // 
@@ -281,7 +285,7 @@
             this.address,
             this.phone,
             this.position,
-            this.NgayLam,
+            this.day,
             this.Luong,
             this.delete});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -325,11 +329,11 @@
             this.position.HeaderText = "Chức Vụ";
             this.position.Name = "position";
             // 
-            // NgayLam
+            // day
             // 
-            this.NgayLam.DataPropertyName = "NgayLam";
-            this.NgayLam.HeaderText = "Ngày Làm Việc";
-            this.NgayLam.Name = "NgayLam";
+            this.day.DataPropertyName = "NgayLam";
+            this.day.HeaderText = "Ngày Làm Việc";
+            this.day.Name = "day";
             // 
             // Luong
             // 
@@ -391,14 +395,14 @@
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.TextBox txtDay;
         private System.Windows.Forms.Label lbSoNgayLam;
+        private System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn day;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
-        private System.Windows.Forms.ComboBox cmbPosition;
     }
 }
