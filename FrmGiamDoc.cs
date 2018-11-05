@@ -14,9 +14,10 @@ namespace DemoQLNhanVien_BTL_
 {
     public partial class FrmGiamDoc : Form
     {
-       SqlConnection cn;
+       SqlConnection cnn;
        DataTable memberTable;
        SqlDataAdapter da;
+        ChucNang cn = new ChucNang();
         public FrmGiamDoc()
         {
             InitializeComponent();
@@ -27,12 +28,24 @@ namespace DemoQLNhanVien_BTL_
         {
             DataSet ds = new DataSet();
             string sql = " Select * FROM DSNhanVien1";
-            da = new SqlDataAdapter(sql, cn);
+            da = new SqlDataAdapter(sql, cnn);
             int number = da.Fill(ds);
             return ds;
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
+        {
+            string cnStr = "Server =USER-PC\\HUYNHDUC; Database = EE; Integrated security = true ;";
+            cnn = new SqlConnection(cnStr);
+            DataSet ds = GetData();
+            memberTable = ds.Tables[0];
+            dgvDanhSach.DataSource = memberTable;
+        }
+        private void FrmGiamDoc_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+        //Thêm
+        public void btnAdd_Click(object sender, EventArgs e)
         {
             
             ChucNang cng = new ChucNang();
@@ -41,7 +54,7 @@ namespace DemoQLNhanVien_BTL_
             txtID.Text = txtDay.Text = txtName.Text = txtAddress.Text = txtPhone.Text = cmbPosition.Text = "";
             txtID.Focus();
         }
-
+        //Cập nhập
         private void btnUpdate_Click(object sender, EventArgs e) //pass
         {
             
@@ -49,7 +62,62 @@ namespace DemoQLNhanVien_BTL_
             da.Update(memberTable);
             
         }
+        //Tính Lương
+        private void btnCalculator_Click(object sender, EventArgs e) // pass
+        {
+            DataRow row = memberTable.NewRow();
+            int a = Convert.ToInt32(txtDay.Text);
+            int chon;
+            double kq = 0;
+            if (cmbPosition.Text == "Giám Ðốc")
+            {
+                chon = 1;
+                kq = cn.TienLuong(a, chon);
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
+            }
+            if (cmbPosition.Text == "Phó Giám Đốc")
+            {
+                chon = 2;
+                kq = cn.TienLuong(a, chon);
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
+            }
+            if (cmbPosition.Text == "Trưởng Phòng")
+            {
+                chon = 3;
+                kq = cn.TienLuong(a, chon);
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
+            }
+            if (cmbPosition.Text == "Nhân Viên")
+            {
+                chon = 4;
+                kq = cn.TienLuong(a, chon);
+                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
+                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
+            }
+            //txtID.Clear();
 
+
+        }
+        //Sửa
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            
+            for (int i = 0; i < dgvDanhSach.Rows.Count; i++)
+            {
+                if (dgvDanhSach.Rows[i].Selected)
+                {
+                    dgvDanhSach.Rows[i].Cells["id"].Value = txtID.Text;
+                    dgvDanhSach.Rows[i].Cells["name"].Value = txtName.Text;
+                    dgvDanhSach.Rows[i].Cells["address"].Value = txtAddress.Text;
+                    dgvDanhSach.Rows[i].Cells["phone"].Value = txtPhone.Text;
+                    dgvDanhSach.Rows[i].Cells["position"].Value = cmbPosition.Text;
+                }
+            }
+        }
+        //xóa
         private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e) //pass
         {
             int col = e.ColumnIndex;
@@ -63,20 +131,6 @@ namespace DemoQLNhanVien_BTL_
                 }
             }
         }
-
-        private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
-        {
-            string cnStr = "Server =USER-PC\\HUYNHDUC; Database = EE; Integrated security = true ;";
-            cn = new SqlConnection(cnStr);
-            DataSet ds = GetData();
-            memberTable = ds.Tables[0];
-            dgvDanhSach.DataSource = memberTable;
-        }
-        private void FrmGiamDoc_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void dgvDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)//pass
         {
             int numrow;
@@ -106,61 +160,8 @@ namespace DemoQLNhanVien_BTL_
 
             }
         }
-
-        private void btnCalculator_Click(object sender, EventArgs e) // pass
-        {
-            DataRow row = memberTable.NewRow();
-            int a = Convert.ToInt32(txtDay.Text);
-            double kq = 0;
-            if (cmbPosition.Text == "Giám Ðốc")
-            {
-                GiamDoc gd = new GiamDoc();
-                kq = gd.TinhTienLuong(a);
-                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
-            }
-            if (cmbPosition.Text == "Phó Giám Đốc")
-            {
-                PhoGiamDoc nv = new PhoGiamDoc();
-                kq = nv.TinhTienLuong(a);
-                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
-            }
-            if (cmbPosition.Text == "Trưởng Phòng")
-            {
-                TruongPhong nv = new TruongPhong();
-                kq = nv.TinhTienLuong(a);
-
-                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
-            }
-            if (cmbPosition.Text == "Nhân Viên")
-            {
-                NhanVien nv = new NhanVien();
-                kq = nv.TinhTienLuong(a);
-                dgvDanhSach.SelectedRows[0].Cells["day"].Value = txtDay.Text;
-                dgvDanhSach.SelectedRows[0].Cells["Luong"].Value = kq.ToString();
-            }
-            //txtID.Clear();
-
-
-        }
-
-        private void btnChange_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dgvDanhSach.Rows.Count; i++)
-            {
-                if (dgvDanhSach.Rows[i].Selected)
-                {
-                    dgvDanhSach.Rows[i].Cells["id"].Value = txtID.Text;
-                    dgvDanhSach.Rows[i].Cells["name"].Value = txtName.Text;
-                    dgvDanhSach.Rows[i].Cells["address"].Value = txtAddress.Text;
-                    dgvDanhSach.Rows[i].Cells["phone"].Value = txtPhone.Text;
-                    dgvDanhSach.Rows[i].Cells["position"].Value = cmbPosition.Text;
-                }
-            }
-        }
-            
-        }
+        
     }
+            
+}
 
