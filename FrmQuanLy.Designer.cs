@@ -72,11 +72,16 @@
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackgroundImage = global::DemoQLNhanVien_BTL_.Properties.Resources.milky_way_starry_sky_night_sky_star_956999;
+            // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(915, 474);
-            this.splitContainer1.SplitterDistance = 135;
+            this.splitContainer1.Size = new System.Drawing.Size(1067, 547);
+            this.splitContainer1.SplitterDistance = 157;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -93,8 +98,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer2.Size = new System.Drawing.Size(776, 474);
-            this.splitContainer2.SplitterDistance = 218;
+            this.splitContainer2.Size = new System.Drawing.Size(905, 547);
+            this.splitContainer2.SplitterDistance = 251;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -106,6 +112,7 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.BackgroundImage = global::DemoQLNhanVien_BTL_.Properties.Resources.milky_way_starry_sky_night_sky_star_956999;
             this.splitContainer3.Panel1.Controls.Add(this.btnCalculator);
             this.splitContainer3.Panel1.Controls.Add(this.btnUpdate);
             this.splitContainer3.Panel1.Controls.Add(this.btnChange);
@@ -114,6 +121,7 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.BackgroundImage = global::DemoQLNhanVien_BTL_.Properties.Resources.milky_way_starry_sky_night_sky_star_956999;
             this.splitContainer3.Panel2.Controls.Add(this.label5);
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Panel2.Controls.Add(this.label3);
@@ -125,136 +133,147 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtPosition);
             this.splitContainer3.Panel2.Controls.Add(this.txtName);
             this.splitContainer3.Panel2.Controls.Add(this.txtID);
-            this.splitContainer3.Size = new System.Drawing.Size(776, 218);
-            this.splitContainer3.SplitterDistance = 29;
+            this.splitContainer3.Size = new System.Drawing.Size(905, 251);
+            this.splitContainer3.SplitterDistance = 33;
+            this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
             // btnCalculator
             // 
-            this.btnCalculator.Location = new System.Drawing.Point(290, 3);
+            this.btnCalculator.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCalculator.ForeColor = System.Drawing.Color.White;
+            this.btnCalculator.Location = new System.Drawing.Point(338, 3);
             this.btnCalculator.Name = "btnCalculator";
-            this.btnCalculator.Size = new System.Drawing.Size(75, 30);
+            this.btnCalculator.Size = new System.Drawing.Size(87, 35);
             this.btnCalculator.TabIndex = 0;
             this.btnCalculator.Text = "Tính Lương";
-            this.btnCalculator.UseVisualStyleBackColor = true;
+            this.btnCalculator.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(193, 3);
+            this.btnUpdate.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUpdate.Location = new System.Drawing.Point(225, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(87, 35);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Cập Nhập";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(97, 3);
+            this.btnChange.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnChange.ForeColor = System.Drawing.Color.White;
+            this.btnChange.Location = new System.Drawing.Point(113, 3);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(75, 30);
+            this.btnChange.Size = new System.Drawing.Size(87, 35);
             this.btnChange.TabIndex = 0;
             this.btnChange.Text = "Sửa";
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 30);
+            this.btnAdd.Size = new System.Drawing.Size(87, 35);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(364, 97);
+            this.label5.Location = new System.Drawing.Point(425, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 1;
             this.label5.Text = "SĐT";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(364, 35);
+            this.label4.Location = new System.Drawing.Point(425, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(50, 15);
             this.label4.TabIndex = 1;
             this.label4.Text = "Địa Chỉ ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 165);
+            this.label3.Location = new System.Drawing.Point(29, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(56, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "Chức Vụ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 97);
+            this.label2.Location = new System.Drawing.Point(29, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(64, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Họ Và Tên";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 35);
+            this.label1.Location = new System.Drawing.Point(29, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(84, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Nhân Viên";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(792, -9);
+            this.textBox6.Location = new System.Drawing.Point(924, -10);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(142, 20);
+            this.textBox6.Size = new System.Drawing.Size(165, 21);
             this.textBox6.TabIndex = 0;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(427, 90);
+            this.txtPhone.Location = new System.Drawing.Point(498, 104);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(142, 20);
+            this.txtPhone.Size = new System.Drawing.Size(165, 21);
             this.txtPhone.TabIndex = 0;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(427, 28);
+            this.txtAddress.Location = new System.Drawing.Point(498, 32);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(142, 20);
+            this.txtAddress.Size = new System.Drawing.Size(165, 21);
             this.txtAddress.TabIndex = 0;
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(114, 158);
+            this.txtPosition.Location = new System.Drawing.Point(133, 182);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(142, 20);
+            this.txtPosition.Size = new System.Drawing.Size(165, 21);
             this.txtPosition.TabIndex = 0;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(114, 90);
+            this.txtName.Location = new System.Drawing.Point(133, 104);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(142, 20);
+            this.txtName.Size = new System.Drawing.Size(165, 21);
             this.txtName.TabIndex = 0;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(114, 28);
+            this.txtID.Location = new System.Drawing.Point(133, 32);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(142, 20);
+            this.txtID.Size = new System.Drawing.Size(165, 21);
             this.txtID.TabIndex = 0;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SlateGray;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -263,9 +282,10 @@
             this.phone,
             this.position});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(905, 291);
             this.dataGridView1.TabIndex = 0;
             // 
             // id
@@ -297,10 +317,14 @@
             // 
             // FrmQuanLy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 474);
+            this.BackgroundImage = global::DemoQLNhanVien_BTL_.Properties.Resources.pexels_photo_1308624;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1067, 547);
             this.Controls.Add(this.splitContainer1);
+            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmQuanLy";
             this.Text = "Quản Lý";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmQuanLy_FormClosing);

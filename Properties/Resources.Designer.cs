@@ -69,5 +69,25 @@ namespace DemoQLNhanVien_BTL_.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap milky_way_starry_sky_night_sky_star_956999 {
+            get {
+                object obj = ResourceManager.GetObject("milky-way-starry-sky-night-sky-star-956999", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_photo_1308624 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-photo-1308624", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
