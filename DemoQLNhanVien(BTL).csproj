@@ -150,6 +150,18 @@
   <ItemGroup>
     <None Include="Resources\QuanLy21.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GiamDoc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Panel GiamDoc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Panel GiamDoc2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel QuanLy.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

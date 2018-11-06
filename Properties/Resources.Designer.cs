@@ -63,6 +63,16 @@ namespace DemoQLNhanVien_BTL_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GiamDoc {
+            get {
+                object obj = ResourceManager.GetObject("GiamDoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
@@ -76,6 +86,36 @@ namespace DemoQLNhanVien_BTL_.Properties {
         internal static System.Drawing.Bitmap milky_way_starry_sky_night_sky_star_956999 {
             get {
                 object obj = ResourceManager.GetObject("milky-way-starry-sky-night-sky-star-956999", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Panel_GiamDoc {
+            get {
+                object obj = ResourceManager.GetObject("Panel GiamDoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Panel_GiamDoc2 {
+            get {
+                object obj = ResourceManager.GetObject("Panel GiamDoc2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panel_QuanLy {
+            get {
+                object obj = ResourceManager.GetObject("panel QuanLy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

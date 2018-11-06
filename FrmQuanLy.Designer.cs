@@ -69,7 +69,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackgroundImage = global::DemoQLNhanVien_BTL_.Properties.Resources.milky_way_starry_sky_night_sky_star_956999;
+            this.splitContainer1.Panel1.BackgroundImage = global::DemoQLNhanVien_BTL_.Properties.Resources.panel_QuanLy;
             // 
             // splitContainer1.Panel2
             // 
@@ -100,6 +100,7 @@
             // 
             // splitContainer3
             // 
+            this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
@@ -127,13 +128,13 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtName);
             this.splitContainer3.Panel2.Controls.Add(this.txtID);
             this.splitContainer3.Size = new System.Drawing.Size(661, 209);
-            this.splitContainer3.SplitterDistance = 27;
+            this.splitContainer3.SplitterDistance = 41;
             this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
             // btnCalculator
             // 
-            this.btnCalculator.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCalculator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnCalculator.ForeColor = System.Drawing.Color.White;
             this.btnCalculator.Location = new System.Drawing.Point(529, 0);
             this.btnCalculator.Name = "btnCalculator";
@@ -144,7 +145,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.Location = new System.Drawing.Point(369, 0);
             this.btnUpdate.Name = "btnUpdate";
@@ -155,7 +156,7 @@
             // 
             // btnChange
             // 
-            this.btnChange.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnChange.ForeColor = System.Drawing.Color.White;
             this.btnChange.Location = new System.Drawing.Point(208, 0);
             this.btnChange.Name = "btnChange";
@@ -166,7 +167,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAdd.Location = new System.Drawing.Point(44, 0);
             this.btnAdd.Name = "btnAdd";
@@ -184,7 +185,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(420, 83);
+            this.txtPhone.Location = new System.Drawing.Point(420, 70);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(165, 20);
             this.txtPhone.TabIndex = 0;
@@ -272,8 +273,9 @@
             this.ClientSize = new System.Drawing.Size(780, 457);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmQuanLy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmQuanLy_FormClosing);
             this.Load += new System.EventHandler(this.FrmQuanLy_Load);
