@@ -34,7 +34,7 @@ namespace DemoQLNhanVien_BTL_
         }
         private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
         {
-            string cnStr = "Server =USER-PC\\HUYNHDUC; Database = EE; Integrated security = true ;";
+            string cnStr = "Server =.; Database = EE; Integrated security = true ;";
             cnn = new SqlConnection(cnStr);
             DataSet ds = GetData();
             memberTable = ds.Tables[0];
