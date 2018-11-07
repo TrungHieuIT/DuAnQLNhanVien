@@ -35,6 +35,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lbSoNgayLam = new System.Windows.Forms.Label();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.txtDay = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lbSoNgayLam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -177,7 +177,7 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(65, 0);
             this.btnAdd.Name = "btnAdd";
@@ -186,6 +186,18 @@
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lbSoNgayLam
+            // 
+            this.lbSoNgayLam.AutoSize = true;
+            this.lbSoNgayLam.BackColor = System.Drawing.Color.Transparent;
+            this.lbSoNgayLam.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoNgayLam.ForeColor = System.Drawing.Color.White;
+            this.lbSoNgayLam.Location = new System.Drawing.Point(376, 110);
+            this.lbSoNgayLam.Name = "lbSoNgayLam";
+            this.lbSoNgayLam.Size = new System.Drawing.Size(81, 15);
+            this.lbSoNgayLam.TabIndex = 13;
+            this.lbSoNgayLam.Text = "Số Ngày Làm";
             // 
             // cmbPosition
             // 
@@ -308,18 +320,6 @@
             this.delete.HeaderText = "Xóa ";
             this.delete.Name = "delete";
             this.delete.Width = 60;
-            // 
-            // lbSoNgayLam
-            // 
-            this.lbSoNgayLam.AutoSize = true;
-            this.lbSoNgayLam.BackColor = System.Drawing.Color.Transparent;
-            this.lbSoNgayLam.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoNgayLam.ForeColor = System.Drawing.Color.White;
-            this.lbSoNgayLam.Location = new System.Drawing.Point(376, 110);
-            this.lbSoNgayLam.Name = "lbSoNgayLam";
-            this.lbSoNgayLam.Size = new System.Drawing.Size(81, 15);
-            this.lbSoNgayLam.TabIndex = 13;
-            this.lbSoNgayLam.Text = "Số Ngày Làm";
             // 
             // FrmGiamDoc
             // 
