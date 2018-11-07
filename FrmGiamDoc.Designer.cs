@@ -48,13 +48,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.cmbChucVu = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNgay = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
+            this.TienLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,8 +86,13 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+<<<<<<< HEAD
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 482);
+            this.splitContainer1.SplitterDistance = 145;
+=======
             this.splitContainer1.Size = new System.Drawing.Size(976, 467);
             this.splitContainer1.SplitterDistance = 140;
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -97,8 +109,13 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvDanhSach);
+<<<<<<< HEAD
+            this.splitContainer2.Size = new System.Drawing.Size(861, 482);
+            this.splitContainer2.SplitterDistance = 189;
+=======
             this.splitContainer2.Size = new System.Drawing.Size(832, 467);
             this.splitContainer2.SplitterDistance = 183;
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -117,9 +134,15 @@
             // 
             // splitContainer3.Panel2
             // 
+<<<<<<< HEAD
+            this.splitContainer3.Panel2.Controls.Add(this.txtNgay);
+            this.splitContainer3.Panel2.Controls.Add(this.label6);
+            this.splitContainer3.Panel2.Controls.Add(this.cmbChucVu);
+=======
             this.splitContainer3.Panel2.Controls.Add(this.cmbPosition);
             this.splitContainer3.Panel2.Controls.Add(this.txtDay);
             this.splitContainer3.Panel2.Controls.Add(this.lbSoNgayLam);
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.splitContainer3.Panel2.Controls.Add(this.label5);
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Panel2.Controls.Add(this.txtPhone);
@@ -129,8 +152,13 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtName);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
             this.splitContainer3.Panel2.Controls.Add(this.txtID);
+<<<<<<< HEAD
+            this.splitContainer3.Size = new System.Drawing.Size(861, 189);
+            this.splitContainer3.SplitterDistance = 40;
+=======
             this.splitContainer3.Size = new System.Drawing.Size(832, 183);
             this.splitContainer3.SplitterDistance = 38;
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.splitContainer3.TabIndex = 0;
             // 
             // btnCalculator
@@ -218,7 +246,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(393, 70);
+            this.label4.Location = new System.Drawing.Point(366, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 7;
@@ -233,7 +261,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(393, 32);
+            this.label3.Location = new System.Drawing.Point(366, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 5;
@@ -275,6 +303,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(176, 20);
             this.txtID.TabIndex = 0;
+        
             // 
             // dgvDanhSach
             // 
@@ -286,15 +315,55 @@
             this.phone,
             this.position,
             this.day,
+<<<<<<< HEAD
+            this.TienLuong,
+=======
             this.Luong,
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.delete});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(0, 0);
             this.dgvDanhSach.Name = "dgvDanhSach";
+<<<<<<< HEAD
+            this.dgvDanhSach.Size = new System.Drawing.Size(861, 289);
+            this.dgvDanhSach.TabIndex = 0;
+            this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
+       
+            // 
+            // cmbChucVu
+            // 
+            this.cmbChucVu.FormattingEnabled = true;
+            this.cmbChucVu.Items.AddRange(new object[] {
+            "Giám Đốc",
+            "Phó Giám Đốc",
+            "Trưởng Phòng",
+            "Nhân Viên"});
+            this.cmbChucVu.Location = new System.Drawing.Point(111, 101);
+            this.cmbChucVu.Name = "cmbChucVu";
+            this.cmbChucVu.Size = new System.Drawing.Size(177, 21);
+            this.cmbChucVu.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(366, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Số Ngày Làm";
+            // 
+            // txtNgay
+            // 
+            this.txtNgay.Location = new System.Drawing.Point(465, 106);
+            this.txtNgay.Name = "txtNgay";
+            this.txtNgay.Size = new System.Drawing.Size(191, 20);
+            this.txtNgay.TabIndex = 12;
+=======
             this.dgvDanhSach.Size = new System.Drawing.Size(832, 280);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
             this.dgvDanhSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSach_CellMouseClick);
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             // 
             // id
             // 
@@ -335,11 +404,19 @@
             this.day.HeaderText = "Ngày Làm Việc";
             this.day.Name = "day";
             // 
+<<<<<<< HEAD
+            // TienLuong
+            // 
+            this.TienLuong.DataPropertyName = "Luong";
+            this.TienLuong.HeaderText = "Tiền Lương";
+            this.TienLuong.Name = "TienLuong";
+=======
             // Luong
             // 
             this.Luong.DataPropertyName = "Luong";
             this.Luong.HeaderText = "Tiền Lương";
             this.Luong.Name = "Luong";
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             // 
             // delete
             // 
@@ -351,7 +428,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(1010, 482);
+=======
             this.ClientSize = new System.Drawing.Size(976, 467);
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmGiamDoc";
             this.Text = "Quản Lý Nhân Viên";
@@ -393,16 +474,26 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.DataGridView dgvDanhSach;
+<<<<<<< HEAD
+        private System.Windows.Forms.ComboBox cmbChucVu;
+        private System.Windows.Forms.TextBox txtNgay;
+        private System.Windows.Forms.Label label6;
+=======
         private System.Windows.Forms.TextBox txtDay;
         private System.Windows.Forms.Label lbSoNgayLam;
         private System.Windows.Forms.ComboBox cmbPosition;
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
         private System.Windows.Forms.DataGridViewTextBoxColumn day;
+<<<<<<< HEAD
+        private System.Windows.Forms.DataGridViewTextBoxColumn TienLuong;
+=======
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
         private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }

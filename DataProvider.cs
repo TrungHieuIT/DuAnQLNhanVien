@@ -38,12 +38,24 @@ namespace DemoQLNhanVien_BTL_
 
         public bool Login(string username, string password)
         {
+<<<<<<< HEAD
             
             SqlConnection cn = new SqlConnection(cnStr);
             cn.Open();
             string user = GetMD5(username);
             string pass = GetMD5(password);
             string sql = "SELECT Type FROM Users WHERE Username = '" + user + "' AND password = '" + pass + "'";
+=======
+<<<<<<< HEAD
+            string user = GetMD5(username);
+            string pass = GetMD5(password);
+=======
+>>>>>>> 86e7dfcd345bbdec4088434cc3f49e0b5a583a6d
+            string cnStr = "Server =.; Database =EE; Integrated security = true";
+            SqlConnection cn = new SqlConnection(cnStr);
+            cn.Open();
+            string sql = "SELECT Type FROM Users WHERE Username = '" + username + "' AND Password = '" + password + "'";
+>>>>>>> 95d13f6764b1be0b6680316cc5c8c34ab3be42f1
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             cmd.CommandText = sql;

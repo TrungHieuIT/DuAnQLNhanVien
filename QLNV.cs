@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace DemoQLNhanVien_BTL_
 {
    public abstract class QLNV
@@ -15,7 +14,10 @@ namespace DemoQLNhanVien_BTL_
         public string Position { get; set; }
         public QLNV()
         {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
         }
         public QLNV(string id, string name, string address, string phone, string position)
         {
