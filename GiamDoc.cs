@@ -16,7 +16,10 @@ namespace DemoQLNhanVien_BTL_
         {
 
         }
+        public GiamDoc():base()
+        {
 
+        }
        
         public override double TinhTienLuong(int soNgayLam)
         {

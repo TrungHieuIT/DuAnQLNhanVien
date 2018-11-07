@@ -16,7 +16,7 @@ namespace DemoQLNhanVien_BTL_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmLogin());
         }
     }
 }
