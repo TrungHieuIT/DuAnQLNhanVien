@@ -8,6 +8,10 @@ namespace DemoQLNhanVien_BTL_
 {
     public class GiamDoc : QLNV
     {
+        public GiamDoc()
+        {
+        }
+
         public GiamDoc(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
 

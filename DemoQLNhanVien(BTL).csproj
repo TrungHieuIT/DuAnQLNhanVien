@@ -70,9 +70,13 @@
     <Compile Include="FrmQuanLy.Designer.cs">
       <DependentUpon>FrmQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiamDoc.cs" />
+    <Compile Include="NhanVien.cs" />
+    <Compile Include="PhoGiamDoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLNV.cs" />
+    <Compile Include="TruongPhong.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

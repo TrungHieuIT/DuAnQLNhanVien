@@ -8,6 +8,10 @@ namespace DemoQLNhanVien_BTL_
 {
     public class NhanVien : QLNV
     {
+        public NhanVien()
+        {
+        }
+
         public NhanVien(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
         }

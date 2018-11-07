@@ -8,6 +8,10 @@ namespace DemoQLNhanVien_BTL_
 {
     public class TruongPhong : QLNV
     {
+        public TruongPhong()
+        {
+        }
+
         public TruongPhong(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
         }

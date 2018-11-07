@@ -8,6 +8,10 @@ namespace DemoQLNhanVien_BTL_
 {
     public class PhoGiamDoc : QLNV
     {
+        public PhoGiamDoc()
+        {
+        }
+
         public PhoGiamDoc(string id, string name, string address, string phone, string position) : base(id, name, address, phone, position)
         {
         }
