@@ -12,6 +12,18 @@ namespace DemoQLNhanVien_BTL_
 {
    public class ChucNang
     {
+
+        public SqlConnection cnn;
+        public DataTable memberTable;
+        public SqlDataAdapter da;
+        public DataSet GetData()
+        {
+            DataSet ds = new DataSet();
+            string sql = " Select * FROM DSNhanVien1";
+            da = new SqlDataAdapter(sql,cnn);
+            int number = da.Fill(ds);
+            return ds;
+        }
         public void Them (DataTable daT, string id , string name , string phone , string address , string position )
         {
              
@@ -20,11 +32,9 @@ namespace DemoQLNhanVien_BTL_
             row["HoTenNV"] = name;
             row["DiaChi"] = address;
             row["SDT"] = phone;
-            row["ChucVu"] = position;
-            // row["NgayLam"] = txtDay.Text;
+            row["ChucVu"] = position;     
             daT.Rows.Add(row);
 
-            //return daT;
         }
     }
 }

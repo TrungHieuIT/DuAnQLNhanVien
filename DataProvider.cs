@@ -13,7 +13,12 @@ namespace DemoQLNhanVien_BTL_
    public class DataProvider
     {
        // SqlConnection cn; 
+        public static string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database =EE; Integrated security = true";
+        public static SqlConnection con;
+        public static SqlCommand cmd;
+        public static SqlDataAdapter da;
 
+        public string type;
         public string GetMD5(string chuoi)
         {
             string str_md5 = "";
@@ -29,14 +34,16 @@ namespace DemoQLNhanVien_BTL_
 
             return str_md5;
         }
-        public string type;
+        
+
         public bool Login(string username, string password)
         {
-            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database =EE; Integrated security = true";
+            
             SqlConnection cn = new SqlConnection(cnStr);
             cn.Open();
-
-            string sql = "SELECT Type FROM Users WHERE Username = '" + username + "' AND password = '" + password + "'";
+            string user = GetMD5(username);
+            string pass = GetMD5(password);
+            string sql = "SELECT Type FROM Users WHERE Username = '" + user + "' AND password = '" + pass + "'";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             cmd.CommandText = sql;

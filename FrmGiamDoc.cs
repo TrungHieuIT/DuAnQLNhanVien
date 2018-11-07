@@ -14,30 +14,19 @@ namespace DemoQLNhanVien_BTL_
 {
     public partial class FrmGiamDoc : Form
     {
-       SqlConnection cn;
-       DataTable memberTable;
-       SqlDataAdapter da;
+      
         public FrmGiamDoc()
         {
             InitializeComponent();
         }
 
-   
-        DataSet GetData()
-        {
-            DataSet ds = new DataSet();
-            string sql = " Select * FROM DSNhanVien1";
-            da = new SqlDataAdapter(sql, cn);
-            int number = da.Fill(ds);
-            return ds;
-        }
 
+
+        ChucNang cn = new ChucNang();
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
-            ChucNang cng = new ChucNang();
-            cng.Them(memberTable, txtID.Text, txtName.Text, txtPhone.Text, txtAddress.Text, cmbPosition.Text);
-            dgvDanhSach.DataSource = memberTable;
+            cn.Them(cn.memberTable, txtID.Text, txtName.Text, txtPhone.Text, txtAddress.Text, cmbPosition.Text);
+            dgvDanhSach.DataSource = cn.memberTable;
             txtID.Text = txtDay.Text = txtName.Text = txtAddress.Text = txtPhone.Text = cmbPosition.Text = "";
             txtID.Focus();
         }
@@ -45,8 +34,8 @@ namespace DemoQLNhanVien_BTL_
         private void btnUpdate_Click(object sender, EventArgs e) //pass
         {
             
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            da.Update(memberTable);
+            SqlCommandBuilder builder = new SqlCommandBuilder(cn.da);
+            cn.da.Update(cn.memberTable);
             
         }
 
@@ -59,7 +48,7 @@ namespace DemoQLNhanVien_BTL_
                
                 if (row >= 0 && row < dgvDanhSach.Rows.Count)
                 {
-                    memberTable.Rows[row].Delete();
+                   cn.memberTable.Rows[row].Delete();
                 }
             }
         }
@@ -67,10 +56,10 @@ namespace DemoQLNhanVien_BTL_
         private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
         {
             string cnStr = "Server =TrungHieuIT\\SQLEXPRESS ; Database = EE; Integrated security = true";
-            cn = new SqlConnection(cnStr);
-            DataSet ds = GetData();
-            memberTable = ds.Tables[0];
-            dgvDanhSach.DataSource = memberTable;
+            cn.cnn = new SqlConnection(cnStr);
+            DataSet ds = cn.GetData();
+            cn.memberTable = ds.Tables[0];
+            dgvDanhSach.DataSource = cn.memberTable;
         }
         private void FrmGiamDoc_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -109,7 +98,7 @@ namespace DemoQLNhanVien_BTL_
 
         private void btnCalculator_Click(object sender, EventArgs e) // pass
         {
-            DataRow row = memberTable.NewRow();
+            DataRow row = cn.memberTable.NewRow();
             int a = Convert.ToInt32(txtDay.Text);
             double kq = 0;
             if (cmbPosition.Text == "Giám Ðốc")
