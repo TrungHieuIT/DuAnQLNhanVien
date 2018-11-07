@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DemoQLNhanVien_BTL_;
@@ -32,13 +26,36 @@ namespace DemoQLNhanVien_BTL_
             int number = da.Fill(ds);
             return ds;
         }
+<<<<<<< HEAD
+       
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //string id, name, address, phone, position;
+            //id = txtID.Text;
+            //name = txtName.Text;
+            //address = txtAddress.Text;
+            //phone = txtPhone.Text;
+            //position = txtPosition.Text;
+
+
+            DataRow row = memberTable.NewRow();
+            row["MaNV"] = txtID.Text;
+            row["HoTenNV"] = txtName.Text;
+            row["DiaChi"] = txtAddress.Text;
+            row["SDT"] = txtPhone.Text;
+            row["ChucVu"] = cmbChucVu.Text;
+            row["NgayLam"] = txtNgay.Text;
+
+            memberTable.Rows.Add(row);
+=======
         private void FrmGiamDoc_Load(object sender, EventArgs e)//pass
         {
-            string cnStr = "Server =USER-PC\\HUYNHDUC; Database = EE; Integrated security = true ;";
+            string cnStr = "Server =.; Database = EE; Integrated security = true ;";
             cnn = new SqlConnection(cnStr);
             DataSet ds = GetData();
             memberTable = ds.Tables[0];
             dgvDanhSach.DataSource = memberTable;
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
         }
         private void FrmGiamDoc_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -122,6 +139,15 @@ namespace DemoQLNhanVien_BTL_
         {
             int col = e.ColumnIndex;
             int row = e.RowIndex;
+<<<<<<< HEAD
+            //if(dgvDanhSach.Columns[col] is DataGridViewButtonColumn && dgvDanhSach.Columns[col].Name == "id")
+            //{
+            //    txtID.Text = col.ToString();
+
+            //}
+
+=======
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
             if (dgvDanhSach.Columns[col] is DataGridViewButtonColumn && dgvDanhSach.Columns[col].Name == "delete")
             {
                
@@ -133,6 +159,63 @@ namespace DemoQLNhanVien_BTL_
         }
         private void dgvDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)//pass
         {
+<<<<<<< HEAD
+            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS ; Database = EE; Integrated security = true";
+            cn = new SqlConnection(cnStr);
+            DataSet ds = GetData();
+            memberTable = ds.Tables[0];
+            dgvDanhSach.DataSource = memberTable;
+        }
+        private void FrmGiamDoc_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCalculator_Click(object sender, EventArgs e)
+        {
+            string GD, PGD, TP, NV , day;
+            int ngay;
+            GD = cmbChucVu.Text = "Giám Đốc";
+            PGD = cmbChucVu.Text = "Phó Giám Đốc";
+            TP = cmbChucVu.Text = "Trưởng Phòng";
+            NV = cmbChucVu.Text = "Nhân Viên";
+            day = txtNgay.Text;
+            ngay = Convert.ToInt32(day);
+            if (cmbChucVu.Text == GD)
+            {
+                GiamDoc gd = new GiamDoc();
+
+                gd.TinhTienLuong(ngay);
+            }
+            if (cmbChucVu.Text == PGD)
+            {
+               PhoGiamDoc pgd = new PhoGiamDoc();
+
+                pgd.TinhTienLuong(ngay);
+
+            }
+            if (cmbChucVu.Text == TP)
+            {
+                TruongPhong tp = new TruongPhong();
+                tp.TinhTienLuong(ngay);
+            }
+            if (cmbChucVu.Text == NV)
+            {
+                NhanVien nv = new NhanVien();
+                nv.TinhTienLuong(ngay);
+            }
+            DataRow row = memberTable.NewRow();
+           // row["TienLuong"] = txtID.Text;
+
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+     
+=======
             int numrow;
             numrow = e.RowIndex;
             txtID.Text = dgvDanhSach.Rows[numrow].Cells["id"].Value.ToString();
@@ -161,6 +244,7 @@ namespace DemoQLNhanVien_BTL_
             }
         }
         
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
     }
             
 }

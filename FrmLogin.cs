@@ -83,6 +83,30 @@ namespace DemoQLNhanVien_BTL_
                 }
             }
         }
+<<<<<<< HEAD
+        public string type;
+        private bool Login(string username, string password)
+        {
+            string cnStr = "Server =TrungHieuIT\\SQLEXPRESS; Database = EE; Integrated security = true";
+            SqlConnection cn = new SqlConnection(cnStr);
+            cn.Open();
+           
+            string sql = "SELECT Type FROM Users WHERE Username = '" + username + "' AND password = '" + password + "'";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = sql;
+            cmd.CommandType = CommandType.Text;
+          
+            type = (string)cmd.ExecuteScalar();
+            cn.Close();
+           
+            if (type == "1" || type == "2")
+                return true;
+
+            return false;
+        }
+=======
+>>>>>>> 08c0d643124baf16838fb8082f2b3a5907edd97c
 
   
 
