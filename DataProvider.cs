@@ -32,7 +32,7 @@ namespace DemoQLNhanVien_BTL_
         public string type;
         public bool Login(string username, string password)
         {
-            string cnStr = "Server =USER-PC\\HUYNHDUC; Database =EE; Integrated security = true";
+            string cnStr = "Server =.; Database =EE; Integrated security = true";
             SqlConnection cn = new SqlConnection(cnStr);
             cn.Open();
 
